@@ -1,0 +1,17 @@
+{
+  "name": "iotapay",
+  "version": "0.0.1",
+  "description": "Pay using IOTA",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/general.js"
+  },
+  "keywords": [
+    "iotapay",
+    "anistark",
+    "acyclic",
+    "tangle"
+  ],
+  "author": "Kumar Anirudha <anirudhastark@yahoo.com> (http://anirudha.org)",
+  "license": "MIT"
+}
