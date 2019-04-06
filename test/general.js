@@ -15,7 +15,7 @@ const iotapay = new IOTAPAY({
 
 iotapay.transfer({
     'address': '',
-    'value': '0',
+    'value': 1,
     'message': 'Testing',
     'seed': ''
 }, function (err, result) {
