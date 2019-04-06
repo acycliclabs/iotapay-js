@@ -13,5 +13,9 @@
     "tangle"
   ],
   "author": "Kumar Anirudha <anirudhastark@yahoo.com> (http://anirudha.org)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.4",
+    "iota.lib.js": "^0.5.1"
+  }
 }

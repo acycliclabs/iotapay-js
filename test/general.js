@@ -1,8 +1,26 @@
-var IOTAPAY = require('../src/index')
+var IOTAPAY = require('../src/index');
 
 const iotapay = new IOTAPAY({
-    key : '',
-    host : 'http://node02.iotatoken.nl:14265'
+    host : 'https://potato.iotasalad.org:14265'
 });
 
-iotapay.start();
+// iotapay.isWorking();
+
+// iotapay.getBalance([''], function (err, balance) {
+    if(err) {
+        console.log('error:', err);
+    }
+    console.log('balance:', balance);
+})
+
+iotapay.transfer({
+    'address': '',
+    'value': '0',
+    'message': 'Testing',
+    'seed': ''
+}, function (err, result) {
+    if(err) {
+        console.log('error:', err);
+    }
+    console.log('result:', result);
+})
