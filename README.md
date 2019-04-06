@@ -9,4 +9,54 @@ NodeJs library to Pay using IOTA
 
 Install the library `npm install iotapay`
 
-## Under Development. 
+Import package: `require('iotapay');`
+
+Initialize:
+```
+new IOTAPAY({
+    host : 'http://node06.iotatoken.nl:14265'
+});
+```
+
+## Basic functions
+
+### Get Balance.
+
+Initialize:
+```
+const iotapay = new IOTAPAY({
+    host : 'http://node06.iotatoken.nl:14265'
+});
+```
+
+Retreive Balance:
+```
+iotapay.getBalance(['ADDRESS'], function (err, balance) {
+    if(err) {
+        console.log('error:', err);
+    }
+    console.log('balance:', balance);
+})
+```
+
+### Pay
+
+```
+iotapay.transfer({
+    address: 'ADDRESS',
+    value: 1,
+    message: 'Testing',
+    seed: 'SEED'
+}, function (err, result) {
+    if(err) {
+        console.log('error:', err);
+    }
+    console.log('result:', result);
+})
+```
+
+Result gives bundle hash.
+
+#### More Functions coming soon.
+
+NOTE: Please, use proper iota node url, ADDRESS and your SEED to initialise. These are simple dummy values. NOT meant for production usage.
