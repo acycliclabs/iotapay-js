@@ -1,9 +1,9 @@
 # IOTAPAY
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/acycliclabs/iotapay-js.svg)](https://github.com/acycliclabs/iotapay-js/releases) 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-[![node](https://img.shields.io/node/v/iotapay.svg)](https://nodejs.org/en/download/) 
-[![npm](https://img.shields.io/npm/dt/iotapay.svg)](https://www.npmjs.com/package/iotapay) 
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/acycliclabs/iotapay-js.svg)](https://github.com/acycliclabs/iotapay-js/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![node](https://img.shields.io/node/v/iotapay.svg)](https://nodejs.org/en/download/)
+[![npm](https://img.shields.io/npm/dt/iotapay.svg)](https://www.npmjs.com/package/iotapay)
 [![NPM](https://nodei.co/npm/iotapay.png)](https://nodei.co/npm/iotapay/)
 
 
@@ -24,17 +24,29 @@ new IOTAPAY({
 
 ## Basic functions
 
-### Get Balance.
+<details><summary>Get Balance:</summary>
+<p>
 
-Initialize:
-```
+<details><summary>Initialize:</summary>
+<p>
+
+#### Initialize the iotapay object.
+
+```javascript
 const iotapay = new IOTAPAY({
     host : 'http://node06.iotatoken.nl:14265'
 });
 ```
 
-Retreive Balance:
-```
+</p>
+</details>
+
+<details><summary>Retreive Balance:</summary>
+<p>
+
+#### Initialize the iotapay object.
+
+```javascript
 iotapay.getBalance(['ADDRESS'], function (err, balance) {
     if(err) {
         console.log('error:', err);
@@ -43,9 +55,19 @@ iotapay.getBalance(['ADDRESS'], function (err, balance) {
 })
 ```
 
-### Pay
+</p>
+</details>
 
-```
+</p>
+</details>
+
+
+<details><summary>Pay:</summary>
+<p>
+
+#### Initialize the iotapay object.
+
+```javascript
 iotapay.transfer({
     address: 'ADDRESS',
     value: 1,
@@ -60,6 +82,10 @@ iotapay.transfer({
 ```
 
 Result gives bundle hash.
+
+</p>
+</details>
+
 
 #### More Functions coming soon.
 
