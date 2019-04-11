@@ -22,6 +22,8 @@ new IOTAPAY({
 });
 ```
 
+***
+
 ## Basic functions
 
 <details><summary>Get Balance:</summary>
@@ -61,6 +63,7 @@ iotapay.getBalance(['ADDRESS'], function (err, balance) {
 </p>
 </details>
 
+***
 
 <details><summary>Pay:</summary>
 <p>
@@ -86,6 +89,7 @@ Result gives bundle hash.
 </p>
 </details>
 
+***
 
 #### More Functions coming soon.
 
