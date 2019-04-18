@@ -26,9 +26,6 @@ new IOTAPAY({
 
 ## Basic functions
 
-<details><summary>Get Balance:</summary>
-<p>
-
 <details><summary>Initialize:</summary>
 <p>
 
@@ -58,7 +55,7 @@ iotapay.findHost(function (err, host) {
 </p>
 </details>
 
-<details><summary>Retreive Balance:</summary>
+<details><summary>Get Balance:</summary>
 <p>
 
 #### Initialize the iotapay object.
@@ -75,15 +72,12 @@ iotapay.getBalance(['ADDRESS'], function (err, balance) {
 </p>
 </details>
 
-</p>
-</details>
-
 ***
 
 <details><summary>Pay:</summary>
 <p>
 
-#### Initialize the iotapay object.
+#### Transfer iota as payment.
 
 ```javascript
 iotapay.transfer({
