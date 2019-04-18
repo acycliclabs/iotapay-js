@@ -1,5 +1,6 @@
-const Promise = require("bluebird") // promises
-const IOTA = require('iota.lib.js')
+const Promise = require("bluebird"); // promises
+const IOTA = require('iota.lib.js');
+const request = require('request');
 // const bAES = require('browserify-aes')
 // const Mam = require('mam.client.js')
 // const Mam = require('./mam.node.js')
@@ -16,10 +17,7 @@ class IOTAPAY {
         // console.log('init => options:', options);
         // init IOTA node.
         // this.setSeed(options.seed);
-        this.setHost(options.host);
-        this.iota = new IOTA({
-            provider: options.host
-        })
+        // this.setHost(options.host);
         // console.log('iota:', iota);
     }
 
@@ -34,6 +32,21 @@ class IOTAPAY {
         else {
             this.host = 'https://potato.iotasalad.org:14265'
         }
+        this.iota = new IOTA({
+            provider: this.host
+        })
+    }
+
+    findHost(callback){
+        request('https://iotapay.dev/api/v1/node', function (error, response, body) {
+            if(response.statusCode == 200) {
+                body = JSON.parse(body);
+                callback(null, body.data.host);
+            }
+            else {
+                callback(error);
+            }
+        });
     }
 
     getBalance(addresses, callback) {

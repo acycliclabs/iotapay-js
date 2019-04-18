@@ -1,6 +1,6 @@
 {
   "name": "iotapay",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Pay using IOTA",
   "main": "src/index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.4",
-    "iota.lib.js": "^0.5.1"
+    "iota.lib.js": "^0.5.1",
+    "request": "^2.88.0"
   }
 }

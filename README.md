@@ -35,9 +35,24 @@ new IOTAPAY({
 #### Initialize the iotapay object.
 
 ```javascript
-const iotapay = new IOTAPAY({
-    host : 'http://node06.iotatoken.nl:14265'
-});
+const iotapay = new IOTAPAY();
+```
+
+Set Host manually like this:
+
+```javascript
+iotapay.setHost('http://node06.iotatoken.nl:14265');
+```
+
+or we will find a suitable host for you like this:
+
+```javascript
+iotapay.findHost(function (err, host) {
+    if(err) {
+        console.log('error:', err);
+    }    
+    iotapay.setHost(host);
+})
 ```
 
 </p>
