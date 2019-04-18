@@ -55,10 +55,12 @@ iotapay.findHost(function (err, host) {
 </p>
 </details>
 
+***
+
 <details><summary>Get Balance:</summary>
 <p>
 
-#### Initialize the iotapay object.
+#### Retrieve Balance
 
 ```javascript
 iotapay.getBalance(['ADDRESS'], function (err, balance) {
