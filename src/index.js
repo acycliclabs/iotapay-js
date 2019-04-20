@@ -74,9 +74,9 @@ class IOTAPAY {
 
     transfer(requestData, callback){
         try {
-            console.log('requestData:', requestData);
+            // console.log('requestData:', requestData);
             var message = this.iota.utils.toTrytes(requestData.message);
-            console.log('message:', message);
+            // console.log('message:', message);
             var transfers = [
                 {
                     value: requestData.value,
@@ -95,6 +95,34 @@ class IOTAPAY {
                     callback(null, success[0].bundle);
                 }
             });
+        } catch (e) {
+            callback(e)
+        }
+    }
+
+    getTransactionData(hash, callback){
+        try {
+            let transactionData = {};
+            // console.log('requestData:', requestData);
+            // console.log('hash:', hash);
+            this.iota.api.getBundle(hash, function (err, bundleInfo) {
+                if(bundleInfo.length > 2) {
+                    for (var i = 0; i < bundleInfo.length; i++) {
+                        if(bundleInfo[i].value > 0) {
+                            transactionData['amount'] = bundleInfo[i].value
+                            transactionData['receiver'] = bundleInfo[i].address
+                            transactionData['timestamp'] = bundleInfo[i].attachmentTimestamp
+                        }
+                        else if (bundleInfo[i].value < 0) {
+                            transactionData['sender'] = bundleInfo[i].address
+                        }
+                    }
+                    callback(err, transactionData);
+                }
+                else {
+                    callback('Can not find the transaction. Please try after sometime!');
+                }
+            })
         } catch (e) {
             callback(e)
         }
