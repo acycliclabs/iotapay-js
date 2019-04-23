@@ -119,7 +119,7 @@ class IOTAPAY {
                 try {
                     // console.log('err:', err);
                     // console.log('bundleInfo:', bundleInfo);
-                    if(bundleInfo.length > 2) {
+                    if(bundleInfo.length > 1) {
                         for (var i = 0; i < bundleInfo.length; i++) {
                             if(bundleInfo[i].value > 0) {
                                 transactionData['amount'] = bundleInfo[i].value
