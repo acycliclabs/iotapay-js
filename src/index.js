@@ -38,33 +38,43 @@ class IOTAPAY {
     }
 
     findHost(callback){
-        request('https://iotapay.dev/api/v1/node', function (error, response, body) {
-            if(response.statusCode == 200) {
-                body = JSON.parse(body);
-                callback(null, body.data.host);
-            }
-            else {
-                callback(error);
-            }
-        });
+        try {
+            request('https://iotapay.dev/api/v1/node', function (error, response, body) {
+                if(response.statusCode == 200) {
+                    body = JSON.parse(body);
+                    callback(null, body.data.host);
+                }
+                else {
+                    console.log('findHost error:', error);
+                    callback(null, 'https://potato.iotasalad.org:14265');
+                }
+            });
+        } catch (e) {
+            console.log('findHost e:', e);
+            callback(null, 'https://potato.iotasalad.org:14265');
+        }
     }
 
     getBalance(addresses, callback) {
-        this.iota.api.getBalances(addresses, 100, function(error, inputs) {
-            var i = 0;
-            var totalValue = 0;
-            if(inputs != null && inputs.balances != null) {
-                inputs.balances.forEach(function(balance) {
-                    // console.log('balance ', i,':', balance);
-                    totalValue += parseInt(balance);
-                    i++
-                })
-            } else {
-                // console.log(error);
-                callback(error);
-            }
-            callback(null, totalValue);
-        });
+        try {
+            this.iota.api.getBalances(addresses, 100, function(error, inputs) {
+                var i = 0;
+                var totalValue = 0;
+                if(inputs != null && inputs.balances != null) {
+                    inputs.balances.forEach(function(balance) {
+                        // console.log('balance ', i,':', balance);
+                        totalValue += parseInt(balance);
+                        i++
+                    })
+                } else {
+                    // console.log(error);
+                    callback(error);
+                }
+                callback(null, totalValue);
+            });
+        } catch (e) {
+            callback(e);
+        }
     }
 
     isWorking() {
@@ -106,21 +116,27 @@ class IOTAPAY {
             // console.log('requestData:', requestData);
             // console.log('hash:', hash);
             this.iota.api.getBundle(hash, function (err, bundleInfo) {
-                if(bundleInfo.length > 2) {
-                    for (var i = 0; i < bundleInfo.length; i++) {
-                        if(bundleInfo[i].value > 0) {
-                            transactionData['amount'] = bundleInfo[i].value
-                            transactionData['receiver'] = bundleInfo[i].address
-                            transactionData['timestamp'] = bundleInfo[i].attachmentTimestamp
+                try {
+                    // console.log('err:', err);
+                    // console.log('bundleInfo:', bundleInfo);
+                    if(bundleInfo.length > 2) {
+                        for (var i = 0; i < bundleInfo.length; i++) {
+                            if(bundleInfo[i].value > 0) {
+                                transactionData['amount'] = bundleInfo[i].value
+                                transactionData['receiver'] = bundleInfo[i].address
+                                transactionData['timestamp'] = bundleInfo[i].attachmentTimestamp
+                            }
+                            else if (bundleInfo[i].value < 0) {
+                                transactionData['sender'] = bundleInfo[i].address
+                            }
                         }
-                        else if (bundleInfo[i].value < 0) {
-                            transactionData['sender'] = bundleInfo[i].address
-                        }
+                        callback(err, transactionData);
                     }
-                    callback(err, transactionData);
-                }
-                else {
-                    callback('Can not find the transaction. Please try after sometime!');
+                    else {
+                        callback('Can not find the transaction. Please try after sometime!');
+                    }
+                } catch (e) {
+                    callback(err);
                 }
             })
         } catch (e) {

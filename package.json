@@ -1,6 +1,6 @@
 {
   "name": "iotapay",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Pay using IOTA",
   "main": "src/index.js",
   "scripts": {
