@@ -4,7 +4,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![node](https://img.shields.io/badge/node-%3E%3D8.9.4-brightgreen.svg)](https://nodejs.org/download/release/v8.9.4/)
 [![npm](https://img.shields.io/npm/dt/iotapay.svg)](https://www.npmjs.com/package/iotapay)
+[![Dependency Status][https://img.shields.io/david/acycliclabs/iotapay-js.svg]][https://david-dm.org/acycliclabs/iotapay-js]
+[![DevDependency Status][https://img.shields.io/david/acycliclabs/iotapay-js.svg?label=devDependencies]][https://david-dm.org/acycliclabs/iotapay-js?type=dev]
+
 [![NPM](https://nodei.co/npm/iotapay.png)](https://nodei.co/npm/iotapay/)
+
+[![Join Discord]][https://img.shields.io/discord/308323056592486420?logo=discord"][https://discord.gg/vg92AZn]
 
 
 [NodeJs](https://nodejs.org/) library to Pay using IOTA
