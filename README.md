@@ -9,8 +9,7 @@
 
 [![NPM](https://nodei.co/npm/iotapay.png)](https://nodei.co/npm/iotapay/)
 
-[![Join Discord](https://img.shields.io/discord/417944032111493152?logo=discord")](https://discord.gg/vg92AZn)
-<a href="">
+[![Join Discord](https://img.shields.io/discord/417944032111493152?logo=discord&label=join%20discord")](https://discord.gg/vg92AZn)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/acycliclabs?style=social&logo=twitter)](https://twitter.com/intent/follow?screen_name=acycliclabs)
 
 [NodeJs](https://nodejs.org/) library to Pay using IOTA
