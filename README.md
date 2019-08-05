@@ -6,6 +6,7 @@
 [![npm](https://img.shields.io/npm/dt/iotapay.svg)](https://www.npmjs.com/package/iotapay)
 [![Dependency Status](https://img.shields.io/david/acycliclabs/iotapay-js.svg)](https://david-dm.org/acycliclabs/iotapay-js)
 [![DevDependency Status](https://img.shields.io/david/acycliclabs/iotapay-js.svg?label=devDependencies)](https://david-dm.org/acycliclabs/iotapay-js?type=dev)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/acycliclabs/iotapay-js)
 
 [![NPM](https://nodei.co/npm/iotapay.png)](https://nodei.co/npm/iotapay/)
 
