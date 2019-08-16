@@ -1,5 +1,7 @@
 # [IOTAPAY](https://iotapay.dev/)
 
+<img src="https://i.imgur.com/XVMqjeA.png" width="200">
+
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/acycliclabs/iotapay-js.svg)](https://github.com/acycliclabs/iotapay-js/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![node](https://img.shields.io/badge/node-%3E%3D8.9.4-brightgreen.svg)](https://nodejs.org/download/release/v8.9.4/)
