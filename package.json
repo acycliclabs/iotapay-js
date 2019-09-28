@@ -1,26 +1,26 @@
 {
-    "name": "iotapay",
-    "version": "1.2.2",
-    "description": "Pay using IOTA",
-    "main": "src/index.js",
-    "scripts": {
-        "test": "node test/general.js"
-    },
-    "engines": {
-        "node": ">=8.9.4",
-        "npm": ">=6.4.1"
-    },
-    "keywords": [
-        "iotapay",
-        "anistark",
-        "acyclic",
-        "tangle"
-    ],
-    "author": "Kumar Anirudha <anirudhastark@yahoo.com> (http://anirudha.org)",
-    "license": "MIT",
-    "dependencies": {
-        "bluebird": "^3.5.4",
-        "iota.lib.js": "^0.5.1",
-        "request": "^2.88.0"
-    }
+  "name": "iotapay",
+  "version": "1.2.2",
+  "description": "Pay using IOTA",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/general.js"
+  },
+  "engines": {
+    "node": ">=12.6.0",
+    "npm": ">=6.9.0"
+  },
+  "keywords": [
+    "iotapay",
+    "anistark",
+    "acyclic",
+    "tangle"
+  ],
+  "author": "Kumar Anirudha <anirudhastark@yahoo.com> (http://anirudha.org)",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.4",
+    "iota.lib.js": "^0.5.1",
+    "request": "^2.88.0"
+  }
 }
