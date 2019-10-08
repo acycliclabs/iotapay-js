@@ -9,11 +9,11 @@ const request = require('request');
 
 class IOTAPAY {
 
-    constructor(options){
+    constructor(options) {
         this.init(options)
     }
 
-    init(options){
+    init(options) {
         // console.log('init => options:', options);
         // init IOTA node.
         // this.setSeed(options.seed);
@@ -21,11 +21,11 @@ class IOTAPAY {
         // console.log('iota:', iota);
     }
 
-    setSeed(seed){
+    setSeed(seed) {
         this.seed = seed;
     }
 
-    setHost(host){
+    setHost(host) {
         if(host) {
             this.host = host;
         }
@@ -37,7 +37,7 @@ class IOTAPAY {
         })
     }
 
-    findHost(callback){
+    findHost(callback) {
         try {
             request('https://iotapay.dev/api/v1/node', function (error, response, body) {
                 if(response.statusCode == 200) {
@@ -77,12 +77,7 @@ class IOTAPAY {
         }
     }
 
-    isWorking() {
-        console.log('IOTAPAY is working!');
-        return true;
-    }
-
-    transfer(requestData, callback){
+    transfer(requestData, callback) {
         try {
             // console.log('requestData:', requestData);
             var message = this.iota.utils.toTrytes(requestData.message);
@@ -110,7 +105,7 @@ class IOTAPAY {
         }
     }
 
-    getTransactionData(hash, callback){
+    getTransactionData(hash, callback) {
         try {
             let transactionData = {};
             // console.log('requestData:', requestData);
@@ -144,6 +139,13 @@ class IOTAPAY {
         }
     }
 
+    generateAddress(requestData, callback) {
+        try {
+            // generate address from seed.
+        } catch (e) {
+            callback(e)
+        }
+    }
 }
 
 module.exports = IOTAPAY
